@@ -1,0 +1,267 @@
+                                      Core php (Theory Topics)
+									  
+ PHP syntax	
+ 
+(1)What are the rules for naming variables in PHP?
+
+Ans.Rules:
+   (1)Always start with $ sign.
+   (2)Do not start with number.
+   (3)Must start with letter or the Underscore(_) also used in variables.
+   (4)Do not use of any special character in variables.
+   (5)Alpha_numeric use in variable.
+   (6)$name , $Name , and $NAME are diffrenet varaibles.
+   (7)Variable examples :
+        $name = "Ajay";
+		
+(2)Explain the concept of php varaibles and their scope.
+Ans.
+    Mainly php varaible declare for contain used to store as number,string,array,float and object and manipulate.
+	
+                        **Scope of varaible**
+						
+ -> Local and Global scope of varaible.	
+ -> Variable declare inside in function called local varaible.
+ -> Varaible declare outside in function called global varaible.it access entire script.
+     ex.$x=8;
+	 
+	 
+(3)What are super global variables in PHP? List at least five super global arrays and their
+use.
+Ans.
+    Super global variables in PHP are built-in global arrays that are accessible from anywhere in a PHP script — inside functions, classes, or files.
+ 
+ **Five super global varaible**
+ 
+ (1)$GET  : - collect data sent via URL.
+ (2)$POST : - collect data sent via HTTP POST.
+ (3)REQUEST : - collect data from $get , $post. 
+ (4)SESSION : - Store session varaible.
+ (5)COOKIE : - value stored user's browser.
+ 
+ 
+ (4) Explain how conditional statements work in PHP.
+ Ans.Conditional statement make decision in code.
+  **Five conditional statement**
+  
+ (1) if Statement
+ (2) if...else Statement
+ (3) if...elseif...else Statement
+ (4) switch Statement
+ (5) Ternary Operator (?:) 
+ 
+ -> if statement : -
+   Executes a block of code only if the condition is true.
+ 
+        $age = 20;
+
+      ($age >= 18) {
+      echo "You are an adult.";
+     }
+	 
+-> if...else Statement : -
+  Executes one block if the condition is true, another if it's false
+  
+   $age = 16;
+
+  if ($age >= 18) {
+    echo "You are an adult.";
+  } else {
+    echo "You are a minor.";
+ }
+ 
+ -> if...elseif...else Statement : -
+ Tests multiple conditions in sequence.
+ 
+ $score = 75;
+
+if ($score >= 90) {
+    echo "Grade: A";
+} elseif ($score >= 75) {
+    echo "Grade: B";
+} elseif ($score >= 60) {
+    echo "Grade: C";
+} else {
+    echo "Fail";
+}
+
+-> switch Statement : -
+
+Tests a single variable against multiple fixed values (good for menu choices, etc.).
+
+$day = "Monday";
+
+switch ($day) {
+    case "Monday":
+        echo "Start of the week!";
+        break;
+    case "Friday":
+        echo "Almost weekend!";
+        break;
+    default:
+        echo "Just another day.";
+}
+
+-> Ternary Operator (?:) : -
+Shorthand for simple if...else.
+
+$is_logged_in = true;
+echo $is_logged_in ? "Welcome back!" : "Please log in.";
+
+
+(4)Discuss the structure of a PHP script and how to embed PHP in HTML.
+Ans : - 
+    A basic PHP script:
+	  <?php
+	  ?>
+	  
+	**Embedded PHP in HTML**
+
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>PHP with HTML</title>
+</head>
+<body>
+
+<h1>Welcome to My Website</h1>
+
+<?php
+$name = "Ajay";
+echo "<p>Hello, $name!</p>";
+?>
+
+</body>
+</html>
+
+(5) Discuss the difference between for loop, foreach loop, and do-while loop in PHP.
+
+--> for loop : loop through a block of code a specified number of time.
+
+Ex: for(init,condition,inc/dec){
+     //block of code
+	 
+--> foreach loop :loop through a block of code each element in a array.
+Ex: foreach ($user as $x){
+   echo $x.
+   
+   
+--> do-while loop: loop through a block of code repeat loop long a once as specified condition is true.
+Ex:- //init
+
+     do{
+	 // inc/dec
+	 }while(condition);
+	 
+	 
+(6)Define arrays in PHP. What are the different types of arrays?
+
+-->Array in php are hold multiple value in single name and refering to index number 0.
+
+**Three type of array**
+
+-->Numeric array
+-->Associative array
+-->Multidimensional array
+
+
+--->Numeric array : -
+
+     Array with number value
+	 
+Ex. $color = ["red","blue"]{
+    $color = [0];
+}	//output = red
+
+
+--> Associative array :-
+
+  Array with named key
+
+Ex. $mobile = ["name"->"ajay","stream->"IT"]{
+    $mobile = $name;
+	//output : ajay
+	
+	
+--> Multidiemensional array:-
+
+ one array element arary in another arary element.	
+ 
+ 
+(7) Explain the difference between include and require in PHP
+
+Ans.The include and require statement are identical,except upon failure.
+
+Require : require will produce fatal error and stop the script.
+
+Include : include will produce warning error and continue the script.
+
+ex.
+
+   include ("filename");
+   require ("filename");
+   
+   
+ 
+(8) Explain what PHP expressions are and give examples of arithmetic and logical
+operations.   
+Ans. 
+In PHP, expressions are combinations of variables, values (constants), functions, 
+and operators that are evaluated to produce a value. An expression can be as simple 
+as a number or a variable, or more complex with multiple operations involved.
+php evaluates expressions to perform operations such as calculations, comparisons, or function calls.
+
+Example = Arithmetic operator
+
+ $sum  = $a+$b; // addition
+ $sum  = $a-$b;  // substraction
+ $sum  = $a*$b;  // multiplication
+ $sum  = $a/$b;  //division
+ $sum  = $a%$b; // modulus
+ 
+ 
+ Example = Logical operator
+ 
+ $a && $b  // AND
+ $a || $b  // Logical operator
+ $a ! $b    //NOT
+ $a and $b  // AND
+ $a or $b   //OR
+ $a xor $b  // XOR
+ 
+ 
+ (9) What is the header function in PHP and how is it used?
+ 
+ Ans.
+ header() function in PHP is a built-in function used to send raw HTTP headers
+ to the web browser. HTTP headers are key parts of web communication and are used
+ to control the behavior of the browser or client before any actual content is sent
+ (like HTML or JSON).
+ 
+ The primary purpose of the header() function is to manipulate the HTTP response that PHP sends to the client (browser). It allows PHP to:
+
+    Redirect users to another page.
+
+    Set the content type (e.g., HTML, JSON, plain text).
+
+    Send custom HTTP status codes (e.g., 404 Not Found).
+
+    Control caching behavior.
+
+    Force download of files.
+
+
+
+	
+	 
+
+  
+  
+    	
+   
+   
+ 	                      
+
+						 
+									  
+									  
